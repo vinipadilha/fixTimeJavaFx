@@ -14,8 +14,7 @@ import com.fixtime.fixtimejavafx.view.ClienteView;
 import com.fixtime.fixtimejavafx.view.VeiculoView;
 import com.fixtime.fixtimejavafx.view.OficinaView;
 
-public class MenuPrincipal extends Application {
-
+public class MenuPrincipal extends Application { // aplicação do JavaFx
     private BorderPane rootLayout;
     private Stage primaryStage;
 
@@ -66,7 +65,7 @@ public class MenuPrincipal extends Application {
 
     private void showClienteView() {
         ClienteView clienteView = new ClienteView();
-        Parent clienteContent = clienteView.createView(); // Chama o método createView()
+        Parent clienteContent = clienteView.createView();
 
         rootLayout.setCenter(clienteContent);
 

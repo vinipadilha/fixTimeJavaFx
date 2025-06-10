@@ -16,19 +16,24 @@ public class OficinaDAO {
         if (!pasta.exists()) pasta.mkdirs(); // caso não exista, cria a pasta data
 
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_NAME));
-        // FILE_NAME -> constante com o caminho para o oficinas.dat
-        // new FileOutputStream -> objeto sendo criado e usando a constante FILE_name como argumento
-        //
-        oos.writeObject(oficinas);
-        oos.close(); // fecha o fluxo de saída
+        // FileOutputStream: Abre o arquivo no disco para escrita de bytes
+        // ObjectOutputStream: Converte objetos Java em bytes (serializa) e os envia para o FileOutputStream.
+
+        oos.writeObject(oficinas);// transfomra o ArrayList em uma sequência de bytes.
+        oos.close();// fecha o fluxo de saída
     }
 
-    public static ArrayList<Oficina> carregar() throws IOException, ClassNotFoundException { //metodo le os arquivos e retorna uma lista de oficinas
-        File file = new File(FILE_NAME);
+    public static ArrayList<Oficina> carregar() throws IOException, ClassNotFoundException {
+        // IOException: erro na entrada e saída de dados (Input/Output - I/O)
+        // ClassNotFoundException: Acha o objeto mas não acha a Classe
+        File file = new File(FILE_NAME); // representa o caminho e o nome do arquivo
         if (!file.exists()) return new ArrayList<>(); // vai verificar se o arquivo existe
 
-        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME)); // abre o arquivo para leitura com
-        ArrayList<Oficina> lista = (ArrayList<Oficina>) ois.readObject(); // le e converte para arrayList novamente
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME));
+        // FileInputStream: conecta o programa com o Arquivo físico
+        // ObjectInputStream: transforma bytes armazenados em objetos Java.
+
+        ArrayList<Oficina> lista = (ArrayList<Oficina>) ois.readObject(); // pega oque foi enviado com writeObject e remonta em Objeto
         ois.close(); // fecha o arquivo  e retorna a lista
         return lista;
     }

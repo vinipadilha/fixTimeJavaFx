@@ -2,7 +2,7 @@ package com.fixtime.fixtimejavafx.model;
 
 import java.io.Serializable;
 
-public class Oficina implements Serializable {
+public class Oficina implements Serializable {// podem ser trasnformados em bytes
     private int id;
     private String nome;
     private String categoria;

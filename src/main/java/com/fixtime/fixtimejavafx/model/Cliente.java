@@ -2,14 +2,14 @@ package com.fixtime.fixtimejavafx.model;
 
 import java.io.Serializable;
 
-public class Cliente implements Serializable { // Indica que os objetos podem ser transformados em bytes, para salvar em arquivos
+public class Cliente implements Serializable {
     private int id;
     private String nome;
-    private int cpf;
-    private int telefone;
+    private String cpf;
+    private String telefone;
     private String email;
 
-    public Cliente(int id, String nome, int cpf, int telefone, String email) {
+    public Cliente(int id, String nome, String cpf, String telefone, String email) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -33,19 +33,19 @@ public class Cliente implements Serializable { // Indica que os objetos podem se
         this.nome = nome;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
